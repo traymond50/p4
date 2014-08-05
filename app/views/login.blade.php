@@ -6,8 +6,16 @@
 
 @section('content')
 
-	<h1>Log in</h1>
-	<p>Not a member.  <a href='/'>Click here to Sign up</a>
+
+<div class="navbar">
+	<div class="top">
+		<p class="member">Not a member?</p>
+		<a id="login-btn" class='btn btn-toolbar btn-md' role="button" href='/'>Sign Up</a>
+	</div>
+</div>
+
+<div class="jumbotron">
+	<h1>Workout Builder</h1>
 
 	{{ Form::open(array('url' => '/login')) }}
 
@@ -21,8 +29,10 @@
 		<span class="errors">{{ $errors->first('password')}}</span>
 		<br><br>
 
-		{{ Form::submit('Submit') }}
+		<input a class='btn btn-primary btn-lg' role="button" type="submit" value="Login">
 
 	{{ Form::close() }}
+
+</div>
 
 @stop
