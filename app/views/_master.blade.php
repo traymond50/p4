@@ -18,10 +18,10 @@
 		<div class='flash_message'>{{Session::get('flash_message') }}</div>
 	
 	@elseif(Session::get('flash_message_selector'))
-		<div class='flash_message_selector'>{{Session::get('flash_message_selector') }}</div>
+		<div class='flash_message flash_message_selector'>{{Session::get('flash_message_selector') }}</div>
 
 	@elseif(Session::get('flash_message_delete'))
-		<div class='flash_message_delete'>{{Session::get('flash_message_delete') }}</div>
+		<div class='flash_message flash_message_delete'>{{Session::get('flash_message_delete') }}</div>
 
 	@endif
 

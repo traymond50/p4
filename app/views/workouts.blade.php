@@ -27,19 +27,15 @@
           		<div class="jumbotron workouts_jumbotron">
             		<h1 class="page-header">Workouts</h1>
 
-
 		<?php
 		$id = Auth::user()->id;
 		$workouts = Workout::orderBy('workout_name')->where('user_id','=',$id)->get();
-		
-
-
+	
 		echo "<div class='container-fluid'>
     		<div class='row'>
       			<div class='col-md-12'>
         			<div class='panel-group' id='accordion'>";
 		
-
         $count = 1;
 		foreach($workouts as $workout)
 		{
@@ -51,43 +47,19 @@
 				</div>";
 				
 				$selection = $workout->exercises->count();
-				
-
-				
-
 
 				echo "<div id='collapse".$count."' class='panel-collapse collapse in'>
 					<div class='panel-body'>";
 				for($i = $selection; $i > 0 ; $i--)
 				{
-					
-					
-						echo $workout->exercises->shift()->name."<br>";
+					echo $workout->exercises->shift()->name."<br>";
 				}
-
 				echo "</div></div>";
-
-
-
-
-
-
-
-
-
-
-
-		echo "<br></div>";
-		$count++;
+				echo "<br></div>";
+				$count++;
 		}
-		
-
-
 		echo "</div></div></div></div>";
 		?>
-          		
-
-
           		</div>
 			</div>
 		</div>
