@@ -175,7 +175,7 @@ Route::post('/workout_selector', array('before' => 'csrf', function() {
 
  	if($idCount > 1){
 		$workout->delete();
-		return Redirect::to('/workout_selector')->with('flash_message', 'Workout Name Must Be Unique');	
+		return Redirect::to('/workout_selector')->with('flash_message_selector', 'Workout Name Must Be Unique');	
  	}
 
 	$exercises = array('push_up','sit_up','bench_press','lunge','jumping_jacks',
@@ -186,7 +186,7 @@ Route::post('/workout_selector', array('before' => 'csrf', function() {
 		$workout->exercises()->attach(Exercise::find($i + 1));
 	}
 
-	return Redirect::to('/workout_selector')->with('flash_message', 'Workout Added');
+	return Redirect::to('/workout_selector')->with('flash_message_selector', 'Workout Added');
 }));
 
 
@@ -248,15 +248,15 @@ Route::post('/delete_workouts', array('before' => 'auth', function()
 	
 	if ($deletion_count == 0) 
 	{
-		return Redirect::to('/delete_workouts')->with('flash_message', 'No Workout Selected');
+		return Redirect::to('/delete_workouts')->with('flash_message_delete', 'No Workout Selected');
 	}
 	elseif ($deletion_count == 1)
 	{
-		return Redirect::to('/delete_workouts')->with('flash_message', 'Workout Deleted');
+		return Redirect::to('/delete_workouts')->with('flash_message_delete', 'Workout Deleted');
 	}
 	else
 	{
-		return Redirect::to('/delete_workouts')->with('flash_message', 'Workouts Deleted');
+		return Redirect::to('/delete_workouts')->with('flash_message_delete', 'Workouts Deleted');
 	} 
 }));
 

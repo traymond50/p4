@@ -31,22 +31,71 @@
 		<?php
 		$id = Auth::user()->id;
 		$workouts = Workout::orderBy('workout_name')->where('user_id','=',$id)->get();
+		
+
+
+		echo "<div class='container-fluid'>
+    		<div class='row'>
+      			<div class='col-md-12'>
+        			<div class='panel-group' id='accordion'>";
+		
+
+        $count = 1;
 		foreach($workouts as $workout)
 		{
-			echo $workout->workout_name."<br>";
-			$selection = $workout->exercises->count();
-			for($i = $selection; $i > 0 ; $i--)
-			{
-				echo $workout->exercises->shift()->name."<br>";
-			}
-			echo "<br>";
+		echo "<div class='panel panel-default'>	
+				<div class='panel-heading'>
+					<h4 class='panel-title'>
+					<a data-toggle='collapse' data-parent='#accordion' href='#collapse".$count."'>".$workout->workout_name."</a>
+					</h4><br>
+				</div>";
+				
+				$selection = $workout->exercises->count();
+				
+
+				
+
+
+				echo "<div id='collapse".$count."' class='panel-collapse collapse in'>
+					<div class='panel-body'>";
+				for($i = $selection; $i > 0 ; $i--)
+				{
+					
+					
+						echo $workout->exercises->shift()->name."<br>";
+				}
+
+				echo "</div></div>";
+
+
+
+
+
+
+
+
+
+
+
+		echo "<br></div>";
+		$count++;
 		}
+		
+
+
+		echo "</div></div></div></div>";
 		?>
+          		
+
+
           		</div>
 			</div>
 		</div>
     </div>
 	
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/collapse.min.js"></script>
 
 	@else
 		<h1>Follow the links below to Access Site</h1>

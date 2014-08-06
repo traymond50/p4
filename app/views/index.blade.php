@@ -14,7 +14,7 @@
 
    <div class="container-fluid">
    		<div class="row">
-        	<div class="col-sm-3 col-md-2 sidebar">
+        	<div class=" col-sm-3 col-md-2 sidebar">
           		<ul class="nav nav-sidebar">
             		<li><a class="active" href="/homepage">Home</a></li>
             		<li><a href="/workout_selector">Workout Selector</a></li>
@@ -26,14 +26,15 @@
         	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           		<div class="jumbotron homepage_jumbotron">
             		<h1 class="page-header">Welcome</h1>
-            		<p>blah blah blah</p>
+            		<p>Create custom workouts in Workout Selector</p>
+            		<p>Access Workouts in Workouts</p>
+            		<p>Delete Workouts you are finished with in Delete Workouts</p>
           		</div>
 			</div>
 		</div>
     </div>
 
-	<!--<script src="js/jquery-2.1.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>-->
+
 
 
 
